@@ -1,0 +1,43 @@
+[project]
+name = "uvmono-ml2"
+version = "0.2.0"
+description = "Example ml inference project."
+readme = "README.md"
+authors = [
+    { name = "Shawn O'Hare", email = "shawn@shawnohare.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "uvmono-redis",
+    "uvmono-runtime2",
+    "idna >= 3.0, <3.10",
+]
+
+[dependency-groups]
+dev = [
+    "uvmono-dev",
+]
+build = [
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# [tool.hatch.build.targets.wheel]
+# packages = ["src/uvmonons"]
+
+[tool.uv.workspace]
+members = [
+    "packages/*",
+    "../dal/uvmono-redis",
+    "../deps/uvmono-runtime2",
+]
+
+[tool.uv.sources]
+# Neither below works if this package is excluded from the workspace.
+# uvmono-core = { path = "../uvmono-core" }
+uvmono-core = { workspace = true }
+uvmono-redis = { workspace = true }
+uvmono-runtime2 = { workspace = true }
+uvmono-dev = { path = "../deps/uvmono-dev", editable = true }

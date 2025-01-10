@@ -1,0 +1,18 @@
+[project]
+name = "uvmono-core"
+version = "0.1.0"
+description = "A core shared dependency."
+readme = "README.md"
+authors = [
+    { name = "Shawn O'Hare", email = "shawn@shawnohare.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# if using namespace packages and hatch, add below to specify target.
+# [tool.hatch.build.targets.wheel]
+# packages = ["src/uvmonons"]

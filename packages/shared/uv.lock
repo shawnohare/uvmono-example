@@ -1,0 +1,42 @@
+version = 1
+requires-python = ">=3.12"
+
+[manifest]
+members = [
+    "uvmono-build",
+    "uvmono-cli",
+    "uvmono-core",
+    "uvmono-lib1",
+]
+
+[[package]]
+name = "uvmono-build"
+version = "0.1.0"
+source = { editable = "uvmono-build" }
+
+[[package]]
+name = "uvmono-cli"
+version = "0.1.0"
+source = { editable = "uvmono-cli" }
+dependencies = [
+    { name = "uvmono-core" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "uvmono-core", editable = "uvmono-core" }]
+
+[[package]]
+name = "uvmono-core"
+version = "0.1.0"
+source = { editable = "uvmono-core" }
+
+[[package]]
+name = "uvmono-lib1"
+version = "0.1.0"
+source = { editable = "uvmono-lib1" }
+dependencies = [
+    { name = "uvmono-core" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "uvmono-core", editable = "uvmono-core" }]

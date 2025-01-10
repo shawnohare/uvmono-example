@@ -1,0 +1,18 @@
+[project]
+name = "uvmono-dev"
+version = "0.1.0"
+description = "Common dev dependencies."
+readme = "README.md"
+authors = [
+    { name = "Shawn O'Hare", email = "shawn@shawnohare.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "ipython>=8.31.0",
+    "pyright>=1.1.391",
+    "ruff>=0.8.4",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
